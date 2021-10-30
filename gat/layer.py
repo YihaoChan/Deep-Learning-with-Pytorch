@@ -12,9 +12,9 @@ class GraphAttentionLayer(nn.Module):
         self.is_final_layer = is_final_layer  # 如果是最后一个GAT层，就不能concatenate，应该average
 
         self.W = nn.Parameter(torch.empty(input_dim, output_dim))  # W.shape: (input_dim, output_dim)
-        nn.init.xavier_uniform_(self.W.data, gain=1.414)
         self.a = nn.Parameter(torch.empty(2 * output_dim, 1))  # a.shape: (2*output_dim, 1)
-        nn.init.xavier_uniform_(self.a.data, gain=1.414)
+
+        self.init_weights()
 
     def forward(self, inputs, adj_matrix):
         """
@@ -62,6 +62,13 @@ class GraphAttentionLayer(nn.Module):
             final_output = torch.cat(multihead_outputs, dim=1)  # (N, heads * output_dim)
 
         return final_output
+
+    def init_weights(self):
+        for param in self.parameters():
+            if param.dim() > 1:
+                nn.init.xavier_uniform_(param, gain=1.414)
+            else:
+                nn.init.constant_(param)
 
 
 if __name__ == '__main__':
