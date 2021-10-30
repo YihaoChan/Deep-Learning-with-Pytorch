@@ -37,13 +37,14 @@ class GraphAttentionLayer(nn.Module):
             # a^T * [W*hi || W*hj] = a^T * (W*hi) + a^T * (W*hj) = ((W*hi) * a) + ((W*hj) * a)
             # 把维度变成(N, N)，才能结合邻接矩阵做mask
             attention_pure = attention_self + attention_nbr.T  # 广播机制
-            attention_pure = F.leaky_relu(attention_pure)
-            attention_pure = F.log_softmax(attention_pure, dim=1)
+
+            # a_ij = exp(LeakyReLU(a^T * [W*hi || W*hj]) / sigma(...) => 把LeakyReLU的结果做softmax
+            a_ij = F.leaky_relu(attention_pure)
+            a_ij = F.softmax(a_ij, dim=1)
 
             # inject the graph stucture for mask => alpha_ij
-            mask = -10e9 * torch.ones_like(attention_pure)
-            a_ij = torch.where(adj_matrix > 0, attention_pure, mask)  # (N, N)
-
+            mask = -10e9 * torch.ones_like(a_ij)
+            a_ij = torch.where(adj_matrix > 0, a_ij, mask)  # (N, N)
             # ===========================================================================
             # 这一步非常非常关键，否则loss会爆炸！！！
             a_ij = F.softmax(a_ij, dim=1)
