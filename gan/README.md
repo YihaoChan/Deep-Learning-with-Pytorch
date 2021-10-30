@@ -1,10 +1,10 @@
-# 1. 生成图片训练过程
+# 1 生成图片训练过程
 
 ![1.训练判别器](images/1.训练判别器.jpg)
 
 ![2.训练生成器](images/2.训练生成器.jpg)
 
-# 2. 训练时的生成器loss和判别器loss问题
+# 2 训练时的生成器loss和判别器loss问题
 
 ## 2.1 现象
 
@@ -19,7 +19,8 @@ GAN网络在训练时，判别器的loss在不断的减小，生成器的loss在
 1. 提高生成器网络生成假数据的能力；
 2. 降低判别器网络鉴别真假数据的能力。
 
-参考链接：
+## 参考资料
 
 1. [Pytorch - 用GAN生成MNIST图片](https://blog.csdn.net/weixin_41278720/article/details/80861284)
 2. [GAN原理及公式推导](https://www.cnblogs.com/jins-note/p/10848248.html)
+
