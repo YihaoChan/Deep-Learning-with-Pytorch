@@ -14,9 +14,9 @@
 
 ## 参考资料
 
-1. https://arxiv.org/pdf/1710.10903.pdf
-2. https://github.com/danielegrattarola/keras-gat/blob/master/keras_gat/graph_attention_layer.py
-3. https://zhuanlan.zhihu.com/p/81350196
-4. https://blog.csdn.net/weixin_43476533/article/details/107229242
-5. https://zhuanlan.zhihu.com/p/128072201
-6. https://zhuanlan.zhihu.com/p/112938037
+1. [论文](https://arxiv.org/pdf/1710.10903.pdf)
+2. [代码](https://github.com/danielegrattarola/keras-gat)
+3. [代码解析-1](https://blog.csdn.net/weixin_43476533/article/details/107229242)
+4. [代码解析-2](https://zhuanlan.zhihu.com/p/128072201)
+5. [GAT原理](https://zhuanlan.zhihu.com/p/81350196)
+6. [计算注意力系数时的广播机制](https://zhuanlan.zhihu.com/p/112938037)
