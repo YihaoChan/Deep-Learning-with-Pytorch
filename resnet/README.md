@@ -1,0 +1,10 @@
+# 参考资料
+1. [残差为什么有效？](https://zhuanlan.zhihu.com/p/80226180)
+2. [CNN参数理解-1](https://zhuanlan.zhihu.com/p/27908027)
+3. [CNN参数理解-2](https://zhuanlan.zhihu.com/p/42559190)
+4. [1*1卷积核改变维度原理](https://zhuanlan.zhihu.com/p/152030652)
+5. [ResNet代码-1](https://github.com/weiaicunzai/pytorch-cifar100/blob/master/models/resnet.py)
+6. [ResNet代码-2](https://www.cnblogs.com/wzyuan/p/9880342.html)
+7. [Basic&Bottleneck Block-1](https://blog.csdn.net/weixin_36411839/article/details/82667754)
+8. [Basic&Bottleneck Block-2](https://blog.csdn.net/sazass/article/details/116864275)
+8. [Basic&Bottleneck Block-3](https://blog.csdn.net/jiangpeng59/article/details/79609392)
